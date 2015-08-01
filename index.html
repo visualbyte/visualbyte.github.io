@@ -114,14 +114,14 @@ var callback = function (playerShots) {
             var html = '';
             $('h2 b').text(playerShots.shots[0].player.name);
             $.each(playerShots.shots, function (i, shot) {
-                var txt = $('<div>').html(shot.description).text();
+                var txtdescription = $('<div>').html(shot.description).text();
                html += '<div class="col-sm-6 col-md-4 col-lg-4"> <div class="grid-list"> ';
                 html += '<a target="_blank" href="' + shot.url + '">';
                 html += '<img class="img-responsive" src="' + shot.image_url + '" ';
                 html += 'alt="' + shot.title + '"><\/a>';
                 html += '<div class="overlay"><a target="_blank"  href="' + shot.url + '">';  
                 html += '<h2>' + shot.title + '<\/h2>';
-                html += '<div>' + txt + '<\/div>';
+                html += '<div>' + txtdescription + '<\/div>';
                 html += '<\/a> <\/div><\/div><\/div>';  
             });
             $('#shotsByPlayerId').html(html);
